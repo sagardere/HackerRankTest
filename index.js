@@ -11,7 +11,7 @@ const requestListener = async function(req, res) {
     var badMsg = {
       'message': 'BAD REQUEST'
     };
-    if (url && url.split('/') && url.split('/')[2] && typeof(url.split('/')[2]) == 'number') {
+    if (url && url.split('/') && url.split('/')[2] && typeof(parseInt(url.split('/')[2])) == 'number') {
       var id = parseInt(url.split('/')[2]);
       var result = await projects.filter(project => project.id == id);
     }
